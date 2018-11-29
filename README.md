@@ -1,5 +1,5 @@
 <p align="center">
-    <img alt="logo" src="https://raw.githubusercontent.com/cloudchefs/openapi-security-scanner/master/img/logo.png" width="320">
+    <img alt="logo" src="https://raw.githubusercontent.com/cloudchefs/openapi-security-scanner/master/img/logo@2x.png" width="320">
 </p>
 
 <p align="center">
