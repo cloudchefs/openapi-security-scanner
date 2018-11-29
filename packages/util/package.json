@@ -1,0 +1,23 @@
+{
+  "name": "@openapi-security-scanner/util",
+  "version": "0.0.0",
+  "description": "Utility functions for the OpenAPI security scanner",
+  "author": "Ash Belmokadem <a.belmokadem@gmail.com>",
+  "keywords": [
+    "util"
+  ],
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "license": "ISC",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}
