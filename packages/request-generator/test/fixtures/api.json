@@ -7,20 +7,13 @@
   },
   "host": "api.dev.aegon.nl",
   "basePath": "/v1/poc",
-  "schemes": [
-    "http",
-    "https"
-  ],
+  "schemes": ["http", "https"],
   "paths": {
     "/hello/{pathPararm1}": {
       "get": {
         "summary": "Endpoint for test parameters test suite",
-        "tags": [
-          "Echo parameters"
-        ],
-        "consumes": [
-          "application/json"
-        ],
+        "tags": ["Echo parameters"],
+        "consumes": ["application/json"],
         "parameters": [
           {
             "name": "pathPararm1",
@@ -64,12 +57,8 @@
           }
         },
         "summary": "Endpoint for test parameters test suite",
-        "tags": [
-          "Echo parameters"
-        ],
-        "consumes": [
-          "application/json"
-        ],
+        "tags": ["Echo parameters"],
+        "consumes": ["application/json"],
         "parameters": [
           {
             "name": "pathPararm1",

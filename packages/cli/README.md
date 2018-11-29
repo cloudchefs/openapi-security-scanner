@@ -1,6 +1,7 @@
 # `@openapi-security-scanner/cli`
 
-> TODO: description
+> Scan your API's in your CI/CD pipeline or from your local machine using the
+> CLI
 
 ## Usage
 

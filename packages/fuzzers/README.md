@@ -1,11 +1,11 @@
-# `@openapi-security-scanner/cli`
+# `@openapi-security-scanner/fuzzers`
 
-> TODO: description
+> Collections of payloads that can be used for fuzzing
 
 ## Usage
 
 ```
-const cli = require('@openapi-security-scanner/cli');
+const fuzzers = require('@openapi-security-scanner/fuzzers');
 
 // TODO: DEMONSTRATE API
 ```
