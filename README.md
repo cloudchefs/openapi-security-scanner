@@ -39,5 +39,5 @@ npx @openapi-security-scanner/cli scan \
 | --------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
 | [@openapi-security-scanner/cli](./packages/cli)                             | Scan your API's in your CI/CD pipeline or from your local machine using the CLI |
 | [@openapi-security-scanner/fuzzers](./packages/fuzzers)                     | Collections of payloads that can be used for fuzzing                            |
-| [@openapi-security-scanner/request-generator](./packages/request-generator) |                                                                                 |
+| [@openapi-security-scanner/request-generator](./packages/request-generator) | Generate Postman collections and data sets for fuzzing your API                 |
 | [@openapi-security-scanner/util](./packages/util)                           | Utility functions for deduplicating shared logic                                |
