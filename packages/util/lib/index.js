@@ -1,5 +1,5 @@
-module.exports.getPathId = getPathId;
+module.exports.getPathId = getPathId
 
-function getPathId(path) {
-  return Buffer.from(path).toString("base64");
+function getPathId (path) {
+  return Buffer.from(path).toString('base64')
 }
