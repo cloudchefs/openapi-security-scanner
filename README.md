@@ -7,6 +7,7 @@
 </p>
 
 ---
+
 [![JavaScript Style Guide][standard-badge]][standard-url]
 [![Build Status][travis-badge]][travis-url]
 
@@ -45,10 +46,9 @@ npx @openapi-security-scanner/cli scan \
 | [@openapi-security-scanner/request-generator](./packages/request-generator) | Generate Postman collections and data sets for fuzzing your API                 |
 | [@openapi-security-scanner/util](./packages/util)                           | Utility functions for deduplicating shared logic                                |
 
-
-
-
 [standard-url]: http://standardjs.com/
-[standard-badge]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg
+[standard-badge]:
+  https://img.shields.io/badge/code%20style-standard-brightgreen.svg
 [travis-url]: https://travis-ci.org/cloudchefs/openapi-security-scanner
-[travis-badge]: https://travis-ci.org/cloudchefs/openapi-security-scanner.svg?branch=master
+[travis-badge]:
+  https://travis-ci.org/cloudchefs/openapi-security-scanner.svg?branch=master
