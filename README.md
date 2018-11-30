@@ -7,12 +7,15 @@
 </p>
 
 ---
+[![JavaScript Style Guide][standard-badge]][standard-url]
+
 
 ## Table of contents
 
-1. [Getting Started](#getting-started)
-2. [Usage](#usage)
-3. [Modules](#usage)
+- [Table of contents](#table-of-contents)
+- [Getting Started](#getting-started)
+- [Usage](#usage)
+- [Modules](#modules)
 
 ## Getting Started
 
@@ -41,3 +44,9 @@ npx @openapi-security-scanner/cli scan \
 | [@openapi-security-scanner/fuzzers](./packages/fuzzers)                     | Collections of payloads that can be used for fuzzing                            |
 | [@openapi-security-scanner/request-generator](./packages/request-generator) | Generate Postman collections and data sets for fuzzing your API                 |
 | [@openapi-security-scanner/util](./packages/util)                           | Utility functions for deduplicating shared logic                                |
+
+
+
+
+[standard-url]: http://standardjs.com/
+[standard-badge]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg
