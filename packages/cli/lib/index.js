@@ -1,7 +1,7 @@
-"use strict";
+'use strict'
 
-module.exports = index;
+module.exports = index
 
-function index() {
+function index () {
   // TODO
 }
