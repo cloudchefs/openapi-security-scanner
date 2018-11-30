@@ -8,7 +8,7 @@
 
 ---
 [![JavaScript Style Guide][standard-badge]][standard-url]
-
+[![Build Status][travis-badge]][travis-url]
 
 ## Table of contents
 
@@ -50,3 +50,5 @@ npx @openapi-security-scanner/cli scan \
 
 [standard-url]: http://standardjs.com/
 [standard-badge]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg
+[tarvis-url]: https://travis-ci.org/cloudchefs/openapi-security-scanner
+[tarvis-badge]: https://travis-ci.org/cloudchefs/openapi-security-scanner.svg?branch=master
