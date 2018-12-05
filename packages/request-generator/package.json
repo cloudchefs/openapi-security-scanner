@@ -1,8 +1,9 @@
 {
-  "name": "@openapi-security-scanner/scanner",
+  "name": "@openapi-security-scanner/request-generator",
   "version": "0.0.0",
-  "description": "Fuzzers for the OpenAPI security scanner",
+  "description": "Generate Postman collections and data sets for fuzzing your API",
   "author": "Ash Belmokadem <a.belmokadem@gmail.com>",
+  "repository": "https://github.com/cloudchefs/openapi-security-scanner/tree/master/packages/request-generator",
   "keywords": [
     "cli"
   ],

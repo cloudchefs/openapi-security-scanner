@@ -1,8 +1,9 @@
 {
   "name": "@openapi-security-scanner/util",
   "version": "0.0.0",
-  "description": "Utility functions for the OpenAPI security scanner",
+  "description": "Utility functions for deduplicating shared logic",
   "author": "Ash Belmokadem <a.belmokadem@gmail.com>",
+  "repository": "https://github.com/cloudchefs/openapi-security-scanner/tree/master/packages/util",
   "keywords": [
     "util"
   ],

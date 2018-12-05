@@ -1,8 +1,9 @@
 {
   "name": "@openapi-security-scanner/cli",
   "version": "0.0.0",
-  "description": "CLI for the OpenAPI security scanner",
+  "description": "Scan your API's in your CI/CD pipeline or from your local machine using the CLI",
   "author": "Ash Belmokadem <a.belmokadem@gmail.com>",
+  "repository": "https://github.com/cloudchefs/openapi-security-scanner/tree/master/packages/cli",
   "keywords": [
     "cli"
   ],

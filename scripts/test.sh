@@ -9,3 +9,8 @@ npx prettier \
     '**/*.{json,md,yaml,yml}'
 
 npx standard
+
+npx lerna bootstrap
+
+npx lerna run test \
+    --stream
