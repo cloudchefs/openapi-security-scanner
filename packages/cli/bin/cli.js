@@ -1,3 +1,5 @@
 #!/usr/bin/env node
 
-console.log('Hello')
+const cli = require('../lib')
+
+cli(process.argv)

@@ -1,37 +1,32 @@
 const fuzzers = require('@openapi-security-scanner/fuzzers')
-const util = require('@openapi-security-scanner/util')
 const flatten = require('lodash.flattendeep')
 
 exports.generateData = generateData
 
-function generateData (api) {
-  const paths = api.getPaths()
+function generateData (parameters) {
+  return flatten(
+    parameters.map(parameter => generateDataByParameter(parameter, parameters))
+  )
+}
 
-  const parameterSets = paths
-    .reduce((result, path) => result.concat(path.getOperations()), [])
-    .map(operation => ({ operation, parameters: operation.getParameters() }))
+function generateDataByParameter (parameter, parameters) {
+  const defaultValues = parameters.reduce((result, parameter) => {
+    result[`${parameter.name}`] = parameter.getSample()
 
-  return parameterSets.map(({ operation, parameters }) => {
-    const path = operation.pathObject.path
-    const pathId = util.getPathId(path)
+    return result
+  }, {})
 
-    const defaultValues = parameters.reduce((result, parameter) => {
-      result[`${pathId}.${parameter.name}`] = parameter.getSample()
+  return Object
+    .keys(fuzzers)
+    .map((category) => {
+      const payloads = fuzzers[category]
 
-      return result
-    }, {})
+      return payloads.map(payload => {
+        const result = Object.assign({}, defaultValues)
 
-    return flatten(
-      parameters.map(parameter => {
-        const fuzzList = fuzzers['004-SQL-INJ:SQL Injection'].map(fuzz => {
-          const result = Object.assign({}, defaultValues)
-          result[`${pathId}.${parameter.name}`] = fuzz
+        result[`${parameter.name}`] = payload
 
-          return result
-        })
-
-        return fuzzList
+        return result
       })
-    )
-  })
+    })
 }

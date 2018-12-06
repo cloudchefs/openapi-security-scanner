@@ -1,13 +1,18 @@
 {
-  "name": "@openapi-security-scanner/scanner",
+  "name": "@openapi-security-scanner/request-generator",
   "version": "0.0.0",
-  "description": "Fuzzers for the OpenAPI security scanner",
+  "description": "Generate Postman collections and data sets for fuzzing your API",
   "author": "Ash Belmokadem <a.belmokadem@gmail.com>",
+  "repository": "https://github.com/cloudchefs/openapi-security-scanner/tree/master/packages/request-generator",
   "keywords": [
     "cli"
   ],
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "lint": "standard",
+    "lint:fix": "standard --fix",
+    "tape": "teeouterr test-output.tap nyc tape 'test/**/*.js'",
+    "xunit:generate": "cat test-output.tap | tap-xunit --package ${npm_package_name} > xunit.xml",
+    "test": "npm run lint && npm run tape"
   },
   "license": "ISC",
   "main": "lib/index.js",
@@ -25,5 +30,12 @@
   ],
   "publishConfig": {
     "access": "public"
+  },
+  "devDependencies": {
+    "nyc": "^13.1.0",
+    "standard": "^12.0.1",
+    "tap-xunit": "^2.3.0",
+    "tape": "^4.9.1",
+    "teeouterr": "^1.2.0"
   }
 }

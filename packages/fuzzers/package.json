@@ -1,8 +1,9 @@
 {
   "name": "@openapi-security-scanner/fuzzers",
   "version": "0.0.0",
-  "description": "Fuzzers for the OpenAPI security scanner",
+  "description": "Collections of payloads that can be used for fuzzing",
   "author": "Ash Belmokadem <a.belmokadem@gmail.com>",
+  "repository": "https://github.com/cloudchefs/openapi-security-scanner/tree/master/packages/fuzzers",
   "keywords": [
     "cli"
   ],

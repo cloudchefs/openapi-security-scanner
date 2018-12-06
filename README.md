@@ -27,11 +27,11 @@ $ npx @openapi-security-scanner/cli
 
 ## Usage
 
-The scan command uses your OpenAPI definition, provided hostname and optional
+The fuzz command uses your OpenAPI definition, provided hostname and optional
 headers to start fuzzing your API.
 
 ```
-npx @openapi-security-scanner/cli scan \
+npx @openapi-security-scanner/cli fuzz \
     --api-definition api.yaml \
     --host api.example.com \
     --headers "Cookie: ..."

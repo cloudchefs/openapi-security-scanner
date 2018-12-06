@@ -1,40 +1,41 @@
 const newmanConverter = require('../newman-converter')
+const dataGenerator = require('../data-generator')
 const flatten = require('lodash.flattendeep')
 
 module.exports.generateCollectionFromApi = generateCollectionFromApi
-module.exports.generateRequestsFromPaths = generateRequestsFromPaths
-module.exports.generateRequestsFromPath = generateRequestsFromPath
-module.exports.generateRequestsFromOperations = generateRequestsFromOperations
-module.exports.generateRequestsFromOperation = generateRequestsFromOperation
+module.exports.generateCollectionFromPaths = generateCollectionFromPaths
+module.exports.generateCollectionFromPath = generateCollectionFromPath
+module.exports.generateCollectionFromOperations = generateCollectionFromOperations
+module.exports.generateCollectionFromOperation = generateCollectionFromOperation
 module.exports.generateRequest = generateRequest
 
 function generateCollectionFromApi (api) {
   const paths = api.getPaths()
 
-  return flatten(generateRequestsFromPaths(paths))
+  return flatten(generateCollectionFromPaths(paths))
 }
 
-function generateRequestsFromPaths (paths) {
-  return paths.map(generateRequestsFromPath)
+function generateCollectionFromPaths (paths) {
+  return paths.map(generateCollectionFromPath)
 }
 
-function generateRequestsFromPath (path) {
-  return generateRequestsFromOperations(path.getOperations())
+function generateCollectionFromPath (path) {
+  return generateCollectionFromOperations(path.getOperations())
 }
 
-function generateRequestsFromOperations (operations) {
-  return operations.map(generateRequestsFromOperation)
+function generateCollectionFromOperations (operations) {
+  return operations.map(generateCollectionFromOperation)
 }
 
-function generateRequestsFromOperation (operation) {
+function generateCollectionFromOperation (operation) {
   const api = operation.pathObject.api
 
   return api.schemes
-    .map(scheme => generateRequestsFromOperationByScheme(operation, scheme))
+    .map(scheme => generateCollectionFromOperationByScheme(operation, scheme))
     .reduce((result, requests) => result.concat(requests), [])
 }
 
-function generateRequestsFromOperationByScheme (operation, scheme) {
+function generateCollectionFromOperationByScheme (operation, scheme) {
   const api = operation.pathObject.api
   const basePath = api.basePath
   const path = operation.pathObject.path
@@ -57,40 +58,34 @@ function generateRequestsFromOperationByScheme (operation, scheme) {
   })
 
   return {
-    info: {
-      name: `Security tests for ${api.host}${api.basePath}`,
-      schema:
-        'https://schema.getpostman.com/json/collection/v2.0.0/collection.json'
+    collection: {
+      info: {
+        name: `Fuzz request for ${api.host}${api.basePath}${path}`,
+        schema:
+                    'https://schema.getpostman.com/json/collection/v2.0.0/collection.json'
+      },
+      item: request
     },
-    item: request
+    data: dataGenerator.generateData(parameters)
   }
 }
 
-function generateRequest ({
-  name,
-  protocol,
-  host,
-  path,
-  query,
-  method,
-  headers,
-  contentType
-}) {
+function generateRequest (options) {
   return {
-    name: name,
+    name: options.name,
     request: {
-      method: method,
+      method: options.method,
       header: [
         {
           key: 'Content-Type',
-          value: contentType
+          value: options.contentType
         }
-      ].concat(headers),
+      ].concat(options.headers),
       url: {
-        protocol: protocol,
-        host: host,
-        path: path,
-        query: query
+        protocol: options.protocol,
+        host: options.host,
+        path: options.path,
+        query: options.query
       }
     },
     response: []
