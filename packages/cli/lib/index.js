@@ -20,6 +20,7 @@ async function cli(argv) {
     program
         .command('fuzz <open_api_file>')
         .description('Fuzz your API using an OpenAPI definition\n')
+        .option('')
         .action(async (openApiFile) => {
             const apiDefinition = await jsonParser.dereference(openApiFile)
 
